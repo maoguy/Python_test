@@ -1,0 +1,7 @@
+#_*_coding:utf-8_*_
+
+from weatherQuery import *
+
+cityName = input("请输入要查询的广东省内城市名：")
+
+print (weatherQuery(cityName))
