@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}首页{% endblock %}
+
+{% block page_content %}
+
+<header class="jumbotron subhead">
+  <div class="page-header">
+    <h1>
+      广东天气查询
+    </h1>
+    <p>
+      <small>数据来源:中国天气网</small>
+    </p>
+    <a class="btn btn-primary" href="http://www.weather.com.cn/" target="_blank">
+      了解更多
+    </a>
+  </div>
+</header>
+
+<hr />
+
+<div class="page-header">
+  {{ wtf.quick_form(form) }}
+</div>
+
+<div >
+  {% if cityName %}
+    <h2>查询 <b>{{ cityName }}</b> 的天气!</h2>
+      <hr />
+    <h2>天气状况 : {{ weather }}</h2>
+  {% else %}
+    <h2>查询天气!</h2>
+  {% endif %}
+
+</div>
+
+  <hr />
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %}首页{% endblock %}
+
+{% block page_content %}
+
+<div class="page-header">
+  <h1>
+    欢迎来到MaoGuy的个人小站
+    <br />
+    <small>使用Flask+Bootstrap构建</small>
+  </h1>
+</div>
+
+<header class="jumbotron subhead">
+  <div class="container">
+    <h1>
+      劳丹峰的大作业
+    </h1>
+    <p class="lead">
+      基于Python网络框架Flask开发的个人小站
+    </p>
+    <a class="btn btn-primary" href="http://maoguy.github.io" target="_blank">
+      了解更多
+    </a>
+  </div>
+</header>
+
+<hr />
+  <div class="page-header">
+    {% if name %}
+      <h1>Hello,{{ name }}!</h1>
+    {% else %}
+      <h1>Hello Stranger!</h1>
+    {% endif %}
+
+  </div>
+    {{ wtf.quick_form(form) }}
+
+{% endblock %}
