@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %}首页{% endblock %}
+
+{% block page_content %}
+
+<header class="jumbotron subhead">
+  <div class="container">
+    <h1>
+      欢迎来到MaoGuy的个人小站
+    </h1>
+    <p>
+      <small>
+        本站使用Flask + Jinja2 + Bootstrap构建
+      </small>
+    </p>
+    <a class="btn btn-primary" href="http://maoguy.github.io" target="_blank">
+      了解更多
+    </a>
+  </div>
+</header>
+
+<hr />
+
+<div id="intro">
+<div class="page-header">
+  <h3>
+    劳丹峰的Python大作业
+    <br />
+    <small>
+      题目：基于Python网络框架Flask开发的个人小站
+    </small>
+  </h3>
+</div>
+
+<h3><span >题目类型</span>：Python的互联网应用</h3>
+
+<hr />
+
+<h3>技术选型<small>项目整体框架涉及的技术</small></h3>
+<ul>
+  <li><p>前端框架：Bootstrap、基于Python的Jinja2模板引擎</p></li>
+  <li><p>后端框架：基于Python的Web应用框架Flask</p></li>
+  <li><p>涉及技术：网络爬虫、数据处理等</p></li>
+  <li><p>开发工具：Atom、Postman等</p></li>
+  <li><p>端口映射：花生壳</p></li>
+</ul>
+
+<hr />
+
+<h3>运行环境<small>项目运行及测试环境</small></h3>
+<ul>
+  <li><p>基于Flask编写的服务器成功在Window7的环境下运行</p></li>
+  <li><p>后台程序代码均使用Python3.5.2语法实现</p></li>
+  <li><p>网站页面兼容Chrome、Safari等浏览器</p></li>
+  <li><p>网站页面在PC端和移动端均完美实现</p></li>
+</ul>
+
+<hr />
+
+<h3>类库依赖<small>项目所涉及到的类库<small></h3>
+<ul>
+  <li><p>Flask：整体架构的基础，同时实现路由功能</p></li>
+  <li><p>flask_bootstrap：向前端页面提供用户界面组件，简化集成过程</p></li>
+  <li><p>falsk_script：扩展提供向Flask插入外部脚本的功能</p></li>
+  <li><p>flask_wtf：Flask 的简单 WTForms 集成，包含 CSRF、文件上传和 Recaptcha 集成，主要用于表单功能的实现</p></li>
+  <li><p>wtforms：进行表单验证</p></li>
+  <li><p>datetime：时间日期处理</p></li>
+  <li><p>urllib：Python3中的urllib3集成了Python2的urllib、urllib2等库，主要用于实现网络请求功能</p></li>
+  <li><p>requests：实现网络请求功能，与urllib功能相似，但相比之下用法更为简洁</p></li>
+  <li><p>BeautifulSoup：主要用于处理网页抓取的数据，提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能</p></li>
+  <li><p>json：实现Python中的数据格式与JSON格式之间的互相转化</p></li>
+</ul>
+
+<hr />
+
+<h3>网站功能<small>项目所实现的功能</small></h3>
+<ul>
+  <li><p>主页：提供一个响应式布局的导航，并提供了整个网站编写所涉及的技术</p></li>
+  <li><p>广东天气：提供一个接受用户输入城市名的界面，实现天气查询功能</p></li>
+  <li><p>PM2.5查询：提供一个接受用户输入城市名的界面，实现实时空气质量查询功能</p></li>
+  <li><p>无聊小游戏：托管了几个主要由JS实现的网页版小游戏</p></li>
+</ul>
+
+<hr />
+
+<h3>参考资料<small>项目所参考的相关资料</small></h3>
+<ul>
+  <li><p>参考书籍：Flask Web Development 、 官方API手册等</p></li>
+  <li><p>参考博客：廖雪峰的Python教程等</p></li>
+  <li><p>代码引用：GitHub 、 简书</p></li>
+  <li><p>错误调试：StackOverflow 、SegmentFault 、Google 、百度等</p></li>
+</ul>
+
+<hr />
+
+<h3>自我评价<small>项目的优缺点</small></h3>
+<ul>
+  <li><p>优点：前端页面实现响应式布局，完美兼容PC端和移动端</p></li>
+  <li><p>缺点：网站功能略微单一，没有使用上数据库技术</p></li>
+  <li><p>展望：加强网站容错性、提升性能并实现基于数据库的大数据应用</p></li>
+</ul>
+
+</div>
+
+  <div class="page-header">
+    {% if name %}
+      <h1>Hello,{{ name }}!</h1>
+    {% else %}
+      <h1>Hello, Stranger!</h1>
+    {% endif %}
+
+  </div>
+    {{ wtf.quick_form(form) }}
+
+{% endblock %}
