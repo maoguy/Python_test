@@ -1,0 +1,44 @@
+{% extends "bootstrap/base.html"  %}
+
+{% block title %}MaoGuy个人小站{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MaoGuy的个人小站</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">主页</a></li>
+                <li><a href="/blog">个人博客</a></li>
+                <li><a href="/weather">广东天气</a></li>
+                <li><a href="/pm25">PM2.5查询</a></li>
+                <li><a href="/game">无聊小游戏</a></li>
+                <li><a href="/fm/0">听听电台</a></li>
+                <li><a href="http://172.30.255.2/a30.htm" target="_blank">内网登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% block page_content %}{% endblock %}
+</div>
+
+
+<hr />
+<footer>
+      <p class="pull-right"><a href="/">Back to Home</a></p>
+      <p>&copy; Powew by <a href="maoguy.github.io">@MaoGuy</a>
+</footer>
+
+{% endblock %}
